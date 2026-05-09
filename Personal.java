@@ -1,4 +1,4 @@
-public class Personal extends Persona implements MiembroU {
+public class Personal extends Persona {
     private String cargo;
     private String departamento;
     private int antiguedad;

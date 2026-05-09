@@ -2,12 +2,14 @@ public class Materia {
     private String nombre;
     private String codigo;
     private int creditos;
+    private float nota;
     private Profesor profesor;
 
-    public Materia(String nombre, String codigo, int creditos, Profesor profesor) {
+    public Materia(String nombre, String codigo, int creditos, float nota, Profesor profesor) {
         this.nombre=nombre;
         this.codigo=codigo;
         this.creditos=creditos;
+        this.nota=nota;
         this.profesor= null;
     }
     public String getNombre(){
@@ -28,6 +30,13 @@ public class Materia {
     public void setCreditos(int creditos){
         this.creditos=creditos;
     }
+    public float getNota(){
+        return nota;
+    }
+    public void setNota(float nota){
+        this.nota=nota;
+    }
+
     public Profesor getProfesor(){
         return profesor;
     }

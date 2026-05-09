@@ -1,4 +1,4 @@
-//package tp2;
+
 
 public class Persona {
 
@@ -21,13 +21,17 @@ public class Persona {
         return apellido;
     }
     public void setApellido(String apellido){
-        this.apellido=apellido;
+        do{
+            this.apellido=apellido;
+        } while(apellido!=null);  
     }
     public String getNombre(){
         return nombre;
     }
-    public void setNoombre(String nombre){
-        this.nombre=nombre;
+    public void setNombre(String nombre){
+        do{
+            this.nombre=nombre;
+        }while(nombre!=null);
     }
     public int getEdad(){
         return edad;

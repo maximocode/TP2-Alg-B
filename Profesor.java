@@ -1,6 +1,6 @@
 /*import tp2.Persona;*/
 
-public class Profesor extends Persona implements MiembroU {
+public class Profesor extends Persona {
     private String especialidad;
     private int añosexperiencia;
     private Materia materiasasignada;
