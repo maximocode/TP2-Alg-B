@@ -1,6 +1,5 @@
-/*import tp2.Persona;*/
 
-public class Profesor extends Persona {
+public class Profesor extends Persona{
     private String especialidad;
     private int añosexperiencia;
     private Materia materiasasignada;
@@ -49,10 +48,10 @@ public class Profesor extends Persona {
         System.out.println("El hash code del profesor es: "+profesor.getDocumento().hashCode());
     }
 
-    public String obtenerrol(){
+    /* public String obtenerrol(){
         return "Profesor";
     }
     public String infocompleta(){
         return "Especialidad: " + getEspecialidad() + "Años de experiencia: " + getAñosexperiencia() + "Matrerias Asignadas: " + getMateriasasignada();
-    }
+    } */
 }

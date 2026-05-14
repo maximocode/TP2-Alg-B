@@ -1,40 +1,55 @@
-/*import tp2.Persona;*/
+import java.util.ArrayList;
 
-public class Estudiante extends Persona {
-    private String carrera;
+public class Estudiante extends Persona{
+    private Carrera carrera;
     private float promedio;
-    private Materia materias;
+    private ArrayList<Materia> materias;
 
     public Estudiante(){
         super();
+        this.materias=new ArrayList<Materia>();
     }
-    public Estudiante(String apellido, String nombre, int edad, String documento, String carrera, float promedio, Materia materias){
+    public Estudiante(String apellido, String nombre, int edad, String documento, Carrera carrera, float promedio){
         super(apellido, nombre, edad, documento);
         this.carrera=carrera;
         this.promedio=promedio;
-        this.materias=materias;
+        this.materias=new ArrayList<Materia>();
     }
-    public String getCarrera(){
+    public Carrera getCarrera(){ 
         return carrera;
     }
-    public void setCarrera(String carrera){
+    public void setCarrera(Carrera carrera){
         this.carrera=carrera;
     }
     public Float getPromedio(){
         return promedio;
     }
     public void setPromedio(float promedio){
-        this.promedio=promedio;
+        if(promedio>=0 && promedio<=10){
+            this.promedio=promedio;
+        } 
     }
-    public Materia getMaterias(){
+    public float calcularPromedio(){
+      if(materias.isEmpty()){
+         return 0;
+        }
+      float suma = 0;
+      for(Materia m : materias){
+         suma += m.getNota();
+        }
+      this.promedio = suma / materias.size();
+      return this.promedio;
+    }
+
+    public ArrayList<Materia> getMaterias(){
         return materias;
     }
-    public void setMaterias(Materia materias){
+    public void setMaterias(ArrayList<Materia> materias){
         this.materias=materias;
     }
 
     public void agregarMaterias(Materia materia){
-        this.materias=materia;
+        this.materias.add(materia);
     }
 
     public String toString(){
@@ -47,14 +62,14 @@ public class Estudiante extends Persona {
             System.out.println("Los estudiantes son diferentes");
         }
     }
-    public void hashCode(Estudiante estudiante){
-        System.out.println("El hash code del estudiante es: "+estudiante.getDocumento().hashCode());
+    public int hashCode(){
+        return getDocumento().hashCode();
     }
 
-    public String obtenerrol(){
+    /*public String obtenerRol(){
         return "Estudiante";
     }
-    public String infocompleta(){
+    public String infoCompleta(){
         return "Carrera: " + getCarrera() + "Promedio: " + getPromedio() + "Matrerias: " + getMaterias();
-    }
+    }*/
 }

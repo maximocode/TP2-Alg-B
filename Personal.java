@@ -34,10 +34,11 @@ public class Personal extends Persona {
         return super.toString()+", Cargo: "+cargo+", Departamento: "+departamento+", Antiguedad: "+antiguedad+" años";
     }
 
-    public String obtenerrol(){
+    /*public String obtenerrol(){
         return "Personal";
     }
+
     public String infocompleta(){
         return "Cargo: " + getCargo() + "Departamento: " + getDepartamento() + "Antiguedad: " + getAntiguedad();
-    }
+    }*/
 }
